@@ -1,0 +1,17 @@
+<h1>Umeng Login</h1>
+
+<%= form_tag sessions_path do %>
+	<div>
+		<label for="nickname">Nickname</label>
+		<%= text_field_tag :nickname, params[:nickname] %>
+	</div>
+	
+	<div>
+		<label for="imsi">Imsi</label>
+		<%= text_field_tag :imsi, params[:imsi] %>
+	</div>
+	
+	<div>
+		<%= submit_tag 'Login' %>
+	</div>
+<% end %>

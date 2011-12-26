@@ -1,4 +1,15 @@
 Umeng::Application.routes.draw do
+  
+  resources :users do
+  end
+  
+  get   'login'     =>  'sessions#new', :as => :login
+  post  'login'     =>  'sessions#create', :as => :sessions
+  post  'logout'    =>  'sessions#destroy', :as => :logout
+  
+  get   'register'  =>  'users#new', :as => :register
+  post  'register'  =>  'users#create'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
