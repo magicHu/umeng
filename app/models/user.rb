@@ -4,8 +4,7 @@ class User < ActiveRecord::Base
   validates :imsi, :presence => true
   
   
-  private 
-  def check_imsi_format
-    
-  end
+  has_many :like_posts
+  has_many :unlike_posts
+  
 end

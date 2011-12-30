@@ -1,0 +1,11 @@
+<div class="pull-right">
+<% if user_signed_in? %>
+	<%= link_to 'Logout', logout_path, :class => "btn primary" %>
+<% else %>
+<form action="<%= sessions_path %>" method="post">
+	<input class="input-small" type="text" placeholder="Nickname" name="nickname">
+	<input class="input-small" type="password" placeholder="Imsi" name="imsi">
+	<button class="btn primary" type="submit">Sign in</button>
+</form>
+<% end %>
+</div>

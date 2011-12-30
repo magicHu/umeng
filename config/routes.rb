@@ -1,11 +1,15 @@
 Umeng::Application.routes.draw do
   
+  resources :posts do
+    resources :comments
+  end
+
   resources :users do
   end
   
   get   'login'     =>  'sessions#new', :as => :login
   post  'login'     =>  'sessions#create', :as => :sessions
-  post  'logout'    =>  'sessions#destroy', :as => :logout
+  match  'logout'   =>  'sessions#destroy', :as => :logout
   
   get   'register'  =>  'users#new', :as => :register
   post  'register'  =>  'users#create'
@@ -59,7 +63,7 @@ Umeng::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'posts#index'
 
   # See how all your routes lay out with "rake routes"
 
